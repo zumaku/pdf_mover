@@ -18,10 +18,6 @@ Program ini memungkinkan Kamu untuk secara otomatis memantau dan memindahkan fil
 - Menggunakan ikon khusus untuk executable.
 - Konfigurasi path folder sumber dan tujuan menggunakan program terpisah.
 
-## Youtube Video
-
-![Download Repository](/src/images/thumbnail.png)
-
 ## List Kontent
 
 1. [Untuk Mahasiswa](#untuk-mahasiswa)
