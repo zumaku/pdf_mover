@@ -4,6 +4,7 @@ import os
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from datetime import datetime
+import configparser
 
 class PDFHandler(FileSystemEventHandler):
     def __init__(self, source_folder, destination_folder):
@@ -21,9 +22,11 @@ class PDFHandler(FileSystemEventHandler):
                 print(f'File {new_filename} telah dipindahkan pada {now}')
 
 if __name__ == "__main__":
-    # Meminta input dari pengguna untuk path folder source dan destination
-    source_folder = input("Masukkan path folder Asal (misalnya, C:\\Users\\YourUsername\\Downloads): ")
-    destination_folder = input("Masukkan path folder tujuan (misalnya, C:\\Users\\YourUsername\\references): ")
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+
+    source_folder = config['Paths']['source_folder']
+    destination_folder = config['Paths']['destination_folder']
 
     # Print startup message with timestamp
     startup_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
