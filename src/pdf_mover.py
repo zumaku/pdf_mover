@@ -21,7 +21,25 @@ class PDFHandler(FileSystemEventHandler):
                 shutil.move(src, dst)
                 print(f'File {new_filename} telah dipindahkan pada {now}')
 
+def greating():
+    gretaing = """
+ ___ ___  ___   __  __  _____   _____ ___ 
+| _ \   \| __| |  \/  |/ _ \ \ / / __| _ \\
+|  _/ |) | _|  | |\/| | (_) \ V /| _||   /
+|_| |___/|_|   |_|  |_|\___/ \_/ |___|_|_\\
+                                        
+Sebuah program yang dapat membantumu mengumpulkan referensi!
+Dibuat oleh Zumaku.
+
+Dokumentasi => https://github.com/zumaku/pdf_mover
+============================================================
+"""
+    print(gretaing)
+    print("[Menjalankan PDF Mover]")
+
 if __name__ == "__main__":
+    greating()
+
     config = configparser.ConfigParser()
     config.read('config.ini')
 
@@ -30,7 +48,7 @@ if __name__ == "__main__":
 
     # Print startup message with timestamp
     startup_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    print(f'Program berjalan pada {startup_time}')
+    print(f'Program berjalan pada saat {startup_time}')
     print(f'Folder Asal: {source_folder}')
     print(f'Folder Tujuan: {destination_folder}')
 
